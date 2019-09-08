@@ -1,0 +1,13 @@
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.deps.json
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.pdb
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.pdb
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.csprojResolveAssemblyReference.cache
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.csproj.CoreCompileInputs.cache
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.AssemblyInfoInputs.cache
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.AssemblyInfo.cs
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.BusinessAccessLayer.pdb
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.BusinessAccessLayer\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
