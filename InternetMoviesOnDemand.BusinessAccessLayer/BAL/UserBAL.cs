@@ -1,9 +1,7 @@
 ﻿using InternetMoviesOnDemand.BusinessAccessLayer.ViewModel;
 using InternetMoviesOnDemand.Repository.Model;
 using InternetMoviesOnDemand.Repository.Repository;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace InternetMoviesOnDemand.BusinessAccessLayer.BAL
 {
