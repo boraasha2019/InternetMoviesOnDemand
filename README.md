@@ -21,5 +21,5 @@ A new User can be registered using the register method of the User controller.
 To Run the project, You will need Visual Studio 2017, .Net core 2.2 installed on your machine.
 Download the internetMoviesOnDemand project and open it with visual stuido.
 
-The test project is in progress.
+Yet to be implemented ILogger to log the error and test project..
 
