@@ -1,0 +1,10 @@
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.deps.json
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.pdb
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.csproj.CoreCompileInputs.cache
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.AssemblyInfoInputs.cache
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.AssemblyInfo.cs
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.pdb
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
