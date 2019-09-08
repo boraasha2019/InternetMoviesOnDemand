@@ -4,6 +4,7 @@ using InternetMoviesOnDemand.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ASPNetCoreJWTSample.Controllers
 {
@@ -29,20 +30,28 @@ namespace ASPNetCoreJWTSample.Controllers
         [HttpPost]
         public IActionResult Login(LoginVM login)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = _userBAL.Login(login);
-
-                if (user != null)
+                if (ModelState.IsValid)
                 {
-                    var jwtToken = _userHelper.GenerateToken(user);
-                    if (jwtToken != null)
+                    var user = _userBAL.Login(login);
+
+                    if (user != null)
                     {
-                        return Ok(jwtToken);
+                        var jwtToken = _userHelper.GenerateToken(user);
+                        if (jwtToken != null)
+                        {
+                            return Ok(jwtToken);
+                        }
                     }
                 }
+                return Unauthorized();
             }
-            return Unauthorized();
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
 
         /// <summary>
@@ -53,12 +62,20 @@ namespace ASPNetCoreJWTSample.Controllers
         [HttpPost]
         public IActionResult Register(UserVM user)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _userBAL.Register(user);
-                return Ok("User successfully added");
+                if (ModelState.IsValid)
+                {
+                    _userBAL.Register(user);
+                    return Ok("User successfully added");
+                }
+                return BadRequest("Username already exist!!");
             }
-            return BadRequest("Username already exist!!");
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
 
         }
 
@@ -70,11 +87,19 @@ namespace ASPNetCoreJWTSample.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var users = _userBAL.GetAllUsers();
-            if (users.Count > 0)
-                return Ok(users);
+            try
+            {
+                var users = _userBAL.GetAllUsers();
+                if (users.Count > 0)
+                    return Ok(users);
 
-            return NotFound();
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
     }
 }

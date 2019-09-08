@@ -2,6 +2,7 @@
 using InternetMoviesOnDemand.BusinessAccessLayer.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace InternetMoviesOnDemand.Controllers
 {
@@ -25,11 +26,19 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var categories = _categoryBAL.GetAllCategory();
-            if (categories.Count > 0)
-                return Ok(categories);
+            try
+            {
+                var categories = _categoryBAL.GetAllCategory();
+                if (categories.Count > 0)
+                    return Ok(categories);
+                return NotFound();
 
-            return NotFound();
+            }
+            catch (Exception ex)
+            {
+                // Implemement Ilogger to log the error.
+                return BadRequest();
+            }
         }
 
 
@@ -42,13 +51,21 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpPost]
         public IActionResult Add(CategoryVM category)
         {
-            if (_categoryBAL.GetCategoryByName(category.CategoryName).CategoryName == null)
+            try
             {
-                _categoryBAL.AddCategory(category);
-                return Ok("Category Successfully Added!!");
+                if (_categoryBAL.GetCategoryByName(category.CategoryName).CategoryName == null)
+                {
+                    _categoryBAL.AddCategory(category);
+                    return Ok("Category Successfully Added!!");
+                }
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                // log the exception using ILogger
+                return BadRequest();
             }
 
-            return BadRequest();
         }
 
         /// <summary>
@@ -60,14 +77,21 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var category = _categoryBAL.GetCategoryById(id);
-            if (category.CategoryName != null)
+            try
             {
-                _categoryBAL.DeleteCatergory(id);
-                return Ok();
+                var category = _categoryBAL.GetCategoryById(id);
+                if (category.CategoryName != null)
+                {
+                    _categoryBAL.DeleteCatergory(id);
+                    return Ok();
+                }
+                return NotFound("Category with id=" + id.ToString() + "not found to delete.");
             }
-            return NotFound("Category with id=" + id.ToString() + "not found to delete.");
-
+            catch (Exception ex)
+            {
+                // log the exception using ILogger
+                return BadRequest();
+            }
         }
     }
 }

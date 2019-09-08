@@ -2,6 +2,7 @@
 using InternetMoviesOnDemand.BusinessAccessLayer.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace InternetMoviesOnDemand.Controllers
 {
@@ -25,11 +26,19 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var videos = _videoBAL.GetAllVideos();
-            if (videos.Count > 0)
-                return Ok(videos);
+            try
+            {
+                var videos = _videoBAL.GetAllVideos();
+                if (videos.Count > 0)
+                    return Ok(videos);
 
-            return NotFound();
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
 
         /// <summary>
@@ -40,11 +49,19 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var video = _videoBAL.GetVideoById(id);
+            try
+            {
+                var video = _videoBAL.GetVideoById(id);
 
-            if (video != null)
-                return Ok(video);
-            return NotFound();
+                if (video != null)
+                    return Ok(video);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
 
         /// <summary>
@@ -57,16 +74,24 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpPost]
         public IActionResult Add(VideoVM video)
         {
-            if (ModelState.IsValid)
+            try
             {
-                if (_videoBAL.GetVideoByName(video.VideoName).VideoName != null)
+                if (ModelState.IsValid)
                 {
-                    _videoBAL.AddVideo(video);
+                    if (_videoBAL.GetVideoByName(video.VideoName).VideoName != null)
+                    {
+                        _videoBAL.AddVideo(video);
 
-                    return Ok("Video Successfully Added!!");
+                        return Ok("Video Successfully Added!!");
+                    }
                 }
+                return BadRequest();
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
 
         /// <summary>
@@ -78,18 +103,26 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpPut]
         public IActionResult Update(VideoVM videoVM)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var movie = _videoBAL.GetVideoById(videoVM.VideoId);
-                if (movie.VideoName != null)
+                if (ModelState.IsValid)
                 {
-                    movie.VideoDescription = videoVM.VideoDescription;
+                    var movie = _videoBAL.GetVideoById(videoVM.VideoId);
+                    if (movie.VideoName != null)
+                    {
+                        movie.VideoDescription = videoVM.VideoDescription;
 
-                    return Ok("Video Description updated successfully!!");
+                        return Ok("Video Description updated successfully!!");
+                    }
+                    return NotFound("Video Description Cannot be updated as, Not Found!");
                 }
-                return NotFound("Video Description Cannot be updated as, Not Found!");
+                return BadRequest("Video cannot be updated!!");
             }
-            return BadRequest("Video cannot be updated!!");
+            catch (Exception ex)
+            {
+                //Log the error using ILogger
+                return BadRequest();
+            }
         }
 
     }
