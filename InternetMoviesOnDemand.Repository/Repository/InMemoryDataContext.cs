@@ -15,6 +15,7 @@ namespace InternetMoviesOnDemand.Data
         {
             new User { Id = 1, UserName = "fred", Password = "F@123", Email="Fred@gmail.com", Role = "Administrator"},
             new User { Id = 2, UserName = "alice", Password = "456", Email="Alice1@gmail.com", Role = "Viewer"},
+             new User { Id = 3, UserName = "Admin1", Password = "Admin@123", Email="Admin@gmail.com", Role = "Administrator"},
         };
 
 

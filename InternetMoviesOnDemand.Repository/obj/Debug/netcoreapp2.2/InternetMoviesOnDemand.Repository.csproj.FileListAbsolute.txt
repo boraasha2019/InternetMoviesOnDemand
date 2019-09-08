@@ -8,3 +8,4 @@ F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netc
 F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.pdb
 F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
 F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
+F:\Study\InternetMoviesOnDemand\InternetMoviesOnDemand.Repository\obj\Debug\netcoreapp2.2\InternetMoviesOnDemand.Repository.csprojResolveAssemblyReference.cache

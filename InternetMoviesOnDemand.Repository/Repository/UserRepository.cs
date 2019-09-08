@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using InternetMoviesOnDemand.Data;
 using InternetMoviesOnDemand.Repository.Model;
-using InternetMoviesOnDemand.Data;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace InternetMoviesOnDemand.Repository.Repository
