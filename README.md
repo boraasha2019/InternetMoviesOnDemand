@@ -2,7 +2,7 @@
 Api To Authenticate, Authorize, Add, Update and View the category wise movies. 
 
 
-This API is made using ASP.Net Core 2.0, In Memory Database using List of Collection, Jwt Token for authentication and authorization.
+This API is made using ASP.Net Core 2.2, In Memory Database using List of Collection, Jwt Token for authentication and authorization.
 
 The project is divided into 3 modules to keep loose coupling. Also in terms of large project this focus on modularity apporach, thus in future if required we can deploy different modules on different servers.
 
@@ -16,6 +16,10 @@ There are two roles used = "Administrator" and "Viewer".
 The Add and Delete Functionality is specific to Administrator for Video and Category.
 
 A new User can be registered using the register method of the User controller.
+
+
+To Run the project, You will need Visual Studio 2017, .Net core 2.2 installed on your machine.
+Download the internetMoviesOnDemand project and open it with visual stuido.
 
 The test project is in progress.
 
