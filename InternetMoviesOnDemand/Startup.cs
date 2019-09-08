@@ -51,7 +51,7 @@ namespace InternetMoviesOnDemand
                 };
             });
 
-            //   services.AddAuthorization(option => option.AddPolicy("Authority", auth => auth.RequireClaim("role", new string[] { "Administrator", "Viewer" })));
+               services.AddAuthorization(option => option.AddPolicy("Role", auth => auth.RequireClaim("role", new string[] { "Administrator", "Viewer" })));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -36,7 +36,7 @@ namespace InternetMoviesOnDemand.Helper
                 Expires = DateTime.UtcNow.AddMinutes(expiryDuration),
                 Subject = new ClaimsIdentity(new List<Claim> {
                         new Claim("userid", user.UserId.ToString()),
-                        new Claim("role", user.Role)
+                        new Claim(ClaimTypes.Role , user.Role)
                     }),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(signingKey), SecurityAlgorithms.HmacSha256Signature)
             };

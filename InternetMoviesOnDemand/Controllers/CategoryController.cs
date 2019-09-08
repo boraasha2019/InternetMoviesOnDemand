@@ -2,9 +2,6 @@
 using InternetMoviesOnDemand.BusinessAccessLayer.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace InternetMoviesOnDemand.Controllers
 {
@@ -45,7 +42,7 @@ namespace InternetMoviesOnDemand.Controllers
         [HttpPost]
         public IActionResult Add(CategoryVM category)
         {
-            if (_categoryBAL.GetCategoryByName(category.CategoryName) == null)
+            if (_categoryBAL.GetCategoryByName(category.CategoryName).CategoryName == null)
             {
                 _categoryBAL.AddCategory(category);
                 return Ok("Category Successfully Added!!");
@@ -64,7 +61,7 @@ namespace InternetMoviesOnDemand.Controllers
         public IActionResult Delete(int id)
         {
             var category = _categoryBAL.GetCategoryById(id);
-            if (category != null)
+            if (category.CategoryName != null)
             {
                 _categoryBAL.DeleteCatergory(id);
                 return Ok();

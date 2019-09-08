@@ -2,6 +2,7 @@
 using InternetMoviesOnDemand.BusinessAccessLayer.ViewModel;
 using InternetMoviesOnDemand.Helper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNetCoreJWTSample.Controllers
@@ -23,7 +24,7 @@ namespace ASPNetCoreJWTSample.Controllers
         /// <summary>
         /// Method to login a user
         /// </summary>
-        /// <param name="loginDto"></param>
+        /// <param name="loginVM"></param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult Login(LoginVM login)
@@ -61,7 +62,10 @@ namespace ASPNetCoreJWTSample.Controllers
 
         }
 
-
+        /// <summary>
+        /// Get all the USers 
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public IActionResult Get()

@@ -32,7 +32,11 @@ namespace InternetMoviesOnDemand.Controllers
             return NotFound();
         }
 
-        // GET api/values/5
+        /// <summary>
+        /// Get the details of a video using video id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -55,7 +59,7 @@ namespace InternetMoviesOnDemand.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (_videoBAL.GetVideoByName(video.VideoName) != null)
+                if (_videoBAL.GetVideoByName(video.VideoName).VideoName != null)
                 {
                     _videoBAL.AddVideo(video);
 
@@ -77,7 +81,7 @@ namespace InternetMoviesOnDemand.Controllers
             if (ModelState.IsValid)
             {
                 var movie = _videoBAL.GetVideoById(videoVM.VideoId);
-                if (movie != null)
+                if (movie.VideoName != null)
                 {
                     movie.VideoDescription = videoVM.VideoDescription;
 
